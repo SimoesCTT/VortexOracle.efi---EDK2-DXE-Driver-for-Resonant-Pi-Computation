@@ -1,0 +1,28 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = VortexOracle
+  MODULE_UNI_FILE                = VortexOracle.uni
+  FILE_GUID                      = 12345678-1234-5678-1234-567812345678  # Replace with a unique GUID (use uuidgen)
+  MODULE_TYPE                    = DXE_DRIVER
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = VortexOracleEntryPoint
+
+[Sources]
+  VortexOracle.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+
+[LibraryClasses]
+  UefiDriverEntryPoint
+  UefiBootServicesTableLib
+  DebugLib
+  BaseLib
+  MathLib  # If needed for custom math; standard <math.h> works in toolchain
+
+[Protocols]
+  # Optional: If extending to produce a protocol, define here (e.g., gEfiVortexOracleProtocolGuid)
+
+[Depex]
+  TRUE
